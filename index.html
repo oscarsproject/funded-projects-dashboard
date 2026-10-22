@@ -9,33 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body style="font-family:'Ubuntu',sans-serif;color:#1a1830;background:#ffffff;">
-<!-- OSCARS Dashboard — Drupal embed
-     Paste into a Full HTML text field or a Basic Page body.
-     Move the <link> and Chart.js <script> to your theme's libraries.yml
-     for production use. -->
 
 <style>
-  /* ═══════════════════════════════════════════════════════════════════
-     DRUPAL INTEGRATION NOTES
-     ─────────────────────────────────────────────────────────────────
-     OPTION A (recommended): Paste this entire file into a "Full HTML"
-       text field in Drupal. Styles are contained within .oscars-dashboard.
-     
-     OPTION B (production): Move the two external resources below to
-       your theme's libraries.yml:
-         - Google Fonts <link> → add to <head> via hook_page_attachments()
-         - Chart.js <script>   → declare in libraries.yml as a JS asset
-       Then remove those two tags from this file.
-     
-     VIEWPORT META: Add to your theme's html.html.twig:
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       (most Drupal themes already include this)
-     
-     ADMIN TOOLBAR: If the sticky header overlaps Drupal's admin toolbar
-       when logged in, add this to your theme CSS:
-         body.toolbar-fixed .oscars-header { top: 39px; }
-         body.toolbar-tray-open.toolbar-fixed .oscars-header { top: 79px; }
-  ═══════════════════════════════════════════════════════════════════ */
 
   :root {
     --purple: #9E559D;
@@ -64,7 +39,7 @@
     background: #f8f8fc;
     border-bottom: 1px solid var(--card-border);
     padding: 20px clamp(12px, 4vw, 40px) 18px;
-    position: sticky; top: 0; z-index: 100; /* sticky - Drupal admin toolbar is ~79px; adjust top offset if needed */
+    position: sticky; top: 0; z-index: 100;
     backdrop-filter: blur(10px);
     box-shadow: 0 1px 0 rgba(68,99,160,0.15);
   }
@@ -735,9 +710,6 @@
     .payoff-tagline { font-size: 13px; }
   }
 
-  /* ═══════════════════════════════════════════════
-     RESPONSIVE OVERRIDES — injected for mobile fix
-  ═══════════════════════════════════════════════ */
 
   /* Viewport meta helper: ensure no horizontal scroll */
   .oscars-dashboard { overflow-x: hidden; max-width: 100%; }
@@ -820,12 +792,6 @@
 
   /* LC filter row: allow wrapping without big gaps */
   .lc-filter-row { gap: 6px; row-gap: 6px; padding: 0 clamp(12px,4vw,40px) !important; }
-
-  /* ── DRUPAL ADMIN TOOLBAR STICKY HEADER OFFSET ── */
-  /* Uncomment if your Drupal site has the admin toolbar enabled:
-  body.toolbar-fixed .oscars-header { top: 39px !important; }
-  body.toolbar-tray-open.toolbar-fixed .oscars-header { top: 79px !important; }
-  */
 
 
   /* ── I7 IMPACT CARDS (merged from inline block) ── */
